@@ -1,9 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import BlogForm from './BlogForm';
+import { Link } from 'react-router-dom'
+
 
 class Blog extends React.Component {
-  state = { blog: {}, edit: false };
+  state = { blog: {}, posts: [], edit: false };
    
   componentDidMount() {
     axios.get(`/api/blogs/${this.props.match.params.id}`)
@@ -51,6 +53,15 @@ class Blog extends React.Component {
       </div>
     )
   }
+
+  // listsPosts = () => {
+  //   return this.state.posts.map(p => {
+  //     return (
+  //       <li>
+  //       <Link to={`/blogs/${b.id}/posts`}>{p.name}</Link>
+  //     </li>      )
+  //   })
+  // }
   
 
   render() {
