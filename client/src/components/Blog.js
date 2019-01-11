@@ -59,6 +59,7 @@ class Blog extends React.Component {
       <div>
         {edit ? this.editBlog() : this.showBlog()}
         <button onClick={this.toggleEdit}>{ edit ? 'Cancel' : 'Edit' }</button>
+        <button onClick={this.handleDelete}>Delete</button>
       </div>
     )
   }
